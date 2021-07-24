@@ -42,7 +42,6 @@ function animateprogress (bar,value) {
     fpAnimationFrame(animacion);
 }
 
- 
    /*let container = document.getElementById ("bar");
 
     container.style ="hidden"*/ 
