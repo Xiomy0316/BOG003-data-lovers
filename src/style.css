@@ -1,0 +1,49 @@
+.background {
+    height: 974px;
+    width: 1446px;
+    border-radius: 0px;
+    width: 95vw;
+    height: 90vh;
+    display:flex;
+    background-attachment: scroll;
+    background-size: auto;
+    opacity: 0.4;
+}
+
+.logo {
+    height: 213px;
+    width: 435px;
+    margin-top: -600px;
+    margin-bottom: 0px;
+    margin-left: 440px;
+    margin-right: 0px;
+    border-radius: 0px;  
+    background-position: center center;
+}
+
+.Pikachu {
+    height: 384px;
+    width: 508px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-left: 440px;
+    margin-right: 0px;
+    border-radius: 0px;  
+    background-position: center center;
+}
+
+#text-welcome {
+    margin-left: 520px;
+    margin-top: -330px;
+    font-family: Roboto;
+    font-size: 20px;
+    font-style: Bold;
+    font-weight: 500;
+}
+
+#bar {
+    height: 240px;
+    width: 480px;
+    margin-left: 34%; 
+    margin-bottom: -17.5%;   
+}
