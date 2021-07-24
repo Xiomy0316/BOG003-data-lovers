@@ -4,7 +4,7 @@
 
 **1** El proceso de diseño del producto comenzó con una investigación, la cual incluye una encuesta sobre Pokémon.
 
-<img src="Survey/Filter.png">
+<img src="Survey/Filters.png">
 <img src="Survey/Characteristics.png">
 <img src="Survey/General_Information.png">
 <img src="Survey/Specific_Information.png">
@@ -116,7 +116,7 @@ Para tener mayor facilidad de lectura sobre las características claves de cada 
 <img src="Itinerant_Prototypes/Pikachu_2.png">
 <img src="Itinerant_Prototypes/Pikachu_3.png">
 <img src="Itinerant_Prototypes/Main_Pokemons.png">
-<img src="Itinerant_Prototypes/Selection_Pokemons.png">
+<img src="Itinerant_Prototypes/Selection_Pokemon.png">
 <img src="Itinerant_Prototypes/Pikachu_Card.png">
 <img src="Itinerant_Prototypes/Features_1.png">
 <img src="Itinerant_Prototypes/Features_2.png">
@@ -140,7 +140,7 @@ Listado de problemas que se detectarón a través de tests de usabilidad  y cóm
 <img src="Prototype_Figma/Page_4.1.png">
 <img src="Prototype_Figma/Page_4.2.png">
 <img src="Prototype_Figma/Page_4.3.png">
-<img src="Prototype_Figma/Page_4.4.png">
+<img src="Prototype_Figma/.Page_4.4.png">
 
 **Link a Figma:**
 <a href="https://www.figma.com/file/Ra2UDWwqATRlOsniRDb8Hz/Let%C2%B4s-go-Pokemon?node-id=117%3A56"></a>
