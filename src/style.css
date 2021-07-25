@@ -5,9 +5,9 @@
     width: 95vw;
     height: 90vh;
     display:flex;
-    background-attachment: scroll;
-    background-size: auto;
-    opacity: 0.4;
+    background-attachment:scroll;
+    background-size: cover;
+    background-color: #fff5f9;
 }
 
 .logo {
@@ -41,9 +41,59 @@
     font-weight: 500;
 }
 
-#bar {
-    height: 240px;
-    width: 480px;
-    margin-left: 34%; 
-    margin-bottom: -17.5%;   
+.progress-bar {
+    position: absolute;
+    color: rgb(107, 107, 107);
+    min-height: 1vh;
+    display: flex;
+    border-radius: 8px;
+    border: 1.5px solid rgba(0, 0, 0, 0.9);
+    margin-top: 16.8%;
+    margin-left: 500px;
+}
+
+.preloader {
+    margin:auto;
+    width: 350px;
+    height: 20px;
+    background: rgba(229, 226, 226, 0.1);
+    position: relative;
+}
+
+.preloader:before{
+    content: "";
+    position: absolute;
+    background: rgba(239, 174, 174, 1);
+    border-radius: 8px;
+    width: 0px;
+    height: 20px;
+    animation: preloader 10s infinite;
+}
+
+.preloader p {
+    margin: 0;
+    line-height: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    position: absolute;
+    color: black;
+    opacity: 0.9;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.close {
+    transform:translateY(-200%);
+    transition: all 0s;
+}
+
+@keyframes preloader {
+    90% {
+        width: 100%;
+        opacity: 1;
+    }
+    100% {
+        width: 100%;
+        opacity: 0;
+    }
 }
