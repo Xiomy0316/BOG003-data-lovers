@@ -15,7 +15,7 @@ body {
     width: 35em;
     display: ruby-text-container;;
     margin-left: 32%; 
-    margin-top: -4.5%; 
+    margin-top: 0%; 
 }
 
 .Pikachu {
@@ -27,9 +27,9 @@ body {
     position: relative;
     display: ruby-text-container;;
     margin-left: 32%; 
-    margin-top: -3%; 
+    margin-top: -1%; 
 }
-
+/* barra*/
 .progress-bar {
     position: absolute;
     color: rgb(107, 107, 107);
@@ -69,7 +69,7 @@ body {
     left: 50%;
     transform: translateX(-50%);
 }
-
+/*transicion de pagina a pagina*/
 .close {
     transform:translateY(-200%);
     transition: all 0s;
@@ -85,7 +85,7 @@ body {
         opacity: 0;
     }
 }
-
+/*responsive*/
 @media (min-width: 280px) and (max-width: 415px) and (orientation: portrait) {
     .logo {
         background-image: url("Images/Logo-responsive.png");
@@ -214,6 +214,138 @@ body {
         margin: 0;
         line-height: 20px;
         font-size: 1.25rem;
+        font-weight: bold;
+        position: absolute;
+        color: #333333;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+@media (min-width: 280px) and (max-width: 660px) and (orientation: landscape) {
+    .logo {
+        background-image: url("Images/Logo-responsive.png");
+        background-repeat: no-repeat;
+        position: relative;
+        background-size: contain;
+        height: 7em;
+        width: 11em;
+        display: ruby-text-container;;
+        margin-left: 35%; 
+        margin-top: -7.5%;
+        background-position:center;
+        justify-tracks: center;
+    }
+    
+    .Pikachu {
+        background-image: url("Images/Pikachu-responsive.png");
+        background-repeat: no-repeat;
+        background-size: contain;
+        height: 8em;
+        position: relative;
+        display: ruby-text-container;;
+        margin-left: 33%; 
+        margin-top: -3%; 
+    }
+    
+    .progress-bar {
+        position: absolute;
+        color: rgb(107, 107, 107);
+        min-height: 0.5vh;
+        display: flex;
+        border-radius: 0.5em;
+        border: 0.094em solid rgba(0, 0, 0, 0.9);
+        margin-top: 0%;
+        margin-left: 38%;
+    }
+    
+    .preloader {
+        margin:auto;
+        width: 150px;
+        height: 10px;
+        background: rgba(229, 226, 226, 0.1);
+        position: relative;
+    }
+    
+    .preloader:before{
+        content: "";
+        position: absolute;
+        background: rgba(239, 174, 174, 1);
+        border-radius: 0.5em;
+        width: 0px;
+        height: 10px;
+        animation: preloader 10s infinite;
+    }
+    
+    .preloader p {
+        margin: 0;
+        line-height: 9px;
+        font-size: 0.7rem;
+        font-weight: bold;
+        position: absolute;
+        color: #333333;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+@media (min-width: 400px) and (max-width: 840px) and (orientation: landscape) {
+    .logo {
+        background-image: url("Images/Logo-responsive.png");
+        background-repeat: no-repeat;
+        position: relative;
+        background-size: contain;
+        height: 8em;
+        width: 12em;
+        display: ruby-text-container;;
+        margin-left: 35%; 
+        margin-top: -9%;
+        background-position:center;
+        justify-tracks: center;
+    }
+    
+    .Pikachu {
+        background-image: url("Images/Pikachu-responsive.png");
+        background-repeat: no-repeat;
+        background-size: contain;
+        height: 8em;
+        position: relative;
+        display: ruby-text-container;;
+        margin-left: 33%; 
+        margin-top: -3%; 
+    }
+    
+    .progress-bar {
+        position: absolute;
+        color: rgb(107, 107, 107);
+        min-height: 0.5vh;
+        display: flex;
+        border-radius: 0.5em;
+        border: 0.094em solid rgba(0, 0, 0, 0.9);
+        margin-top: 0%;
+        margin-left: 36%;
+    }
+    
+    .preloader {
+        margin:auto;
+        width: 200px;
+        height: 10px;
+        background: rgba(229, 226, 226, 0.1);
+        position: relative;
+    }
+    
+    .preloader:before{
+        content: "";
+        position: absolute;
+        background: rgba(239, 174, 174, 1);
+        border-radius: 0.5em;
+        width: 0px;
+        height: 10px;
+        animation: preloader 10s infinite;
+    }
+    
+    .preloader p {
+        margin: 0;
+        line-height: 9px;
+        font-size: 0.7rem;
         font-weight: bold;
         position: absolute;
         color: #333333;
