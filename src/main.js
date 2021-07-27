@@ -11,9 +11,9 @@ let frutas = ['manzana', 'piña','pera', 'kiw']
 console.log(frutas[0]);*/
 
 /*document.getElementById("welcome").style.display = "none";
-document.getElementById("pokemons").style.display = "block";*/
+document.getElementById("pokemons").style.display = "block";
 
 let progress_bar = document.getElementById ("welcome");
 setTimeout (function() {
     progress_bar.classList.add ("close");
-},9000);
+},9000);*/
