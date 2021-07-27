@@ -86,7 +86,7 @@ body {
     }
 }
 
-@media (min-width: 300px) and (max-width: 768px) {
+@media (min-width: 280px) and (max-width: 415px) and (orientation: portrait) {
     .logo {
         background-image: url("Images/Logo-responsive.png");
         background-repeat: no-repeat;
@@ -122,6 +122,74 @@ body {
         border: 0.094em solid rgba(0, 0, 0, 0.9);
         margin-top: -18%;
         margin-left: 3%;
+    }
+    
+    .preloader {
+        margin:auto;
+        width: 320px;
+        height: 20px;
+        background: rgba(229, 226, 226, 0.1);
+        position: relative;
+    }
+    
+    .preloader:before{
+        content: "";
+        position: absolute;
+        background: rgba(239, 174, 174, 1);
+        border-radius: 0.5em;
+        width: 0px;
+        height: 20px;
+        animation: preloader 10s infinite;
+    }
+    
+    .preloader p {
+        margin: 0;
+        line-height: 20px;
+        font-size: 1.25rem;
+        font-weight: bold;
+        position: absolute;
+        color: #333333;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
+@media (min-width: 416px) and (max-width: 768px) and (orientation: portrait) {
+    .logo {
+        background-image: url("Images/Logo-responsive.png");
+        background-repeat: no-repeat;
+        position: relative;
+        background-size: contain;
+        height: 14em;
+        width: 22em;
+        display: ruby-text-container;;
+        margin-left: 16%; 
+        margin-top: -2%;
+        background-position:center;
+        justify-tracks: center;
+    }
+    
+    .Pikachu {
+        background-image: url("Images/Pikachu-responsive.png");
+        background-repeat: no-repeat;
+        background-size: contain;
+        height: 24.5em;
+        width: 23em;
+        position: relative;
+        display: ruby-text-container;;
+        margin-left: 12%; 
+        margin-top: -8%; 
+    }
+    
+    .progress-bar {
+        position: absolute;
+        color: rgb(107, 107, 107);
+        min-height: 0.5vh;
+        display: flex;
+        border-radius: 0.5em;
+        border: 0.094em solid rgba(0, 0, 0, 0.9);
+        margin-top: -16%;
+        margin-left: 20%;
     }
     
     .preloader {
