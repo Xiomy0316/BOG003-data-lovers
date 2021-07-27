@@ -1,55 +1,44 @@
-.background {
-    height: 974px;
-    width: 1446px;
-    border-radius: 0px;
-    width: 95vw;
-    height: 90vh;
-    display:flex;
-    background-attachment:scroll;
+body {
+    background-image: url("Images/Pokeball.png");
+    min-height: 100%;
+    background-position: center;
     background-size: cover;
     background-color: #fff5f9;
 }
 
 .logo {
-    height: 213px;
-    width: 435px;
-    margin-top: -600px;
-    margin-bottom: 0px;
-    margin-left: 440px;
-    margin-right: 0px;
-    border-radius: 0px;  
-    background-position: center center;
+    background-image: url("Images/Logo.png");
+    background-repeat: no-repeat;
+    position: relative;
+    background-size: contain;
+    height: 14em;
+    width: 35em;
+    display: ruby-text-container;;
+    margin-left: 32%; 
+    margin-top: -4.5%; 
 }
 
 .Pikachu {
-    height: 384px;
-    width: 508px;
-    margin-top: 0px;
-    margin-bottom: 0px;
-    margin-left: 440px;
-    margin-right: 0px;
-    border-radius: 0px;  
-    background-position: center center;
-}
-
-#text-welcome {
-    margin-left: 520px;
-    margin-top: -330px;
-    font-family: Roboto;
-    font-size: 20px;
-    font-style: Bold;
-    font-weight: 500;
+    background-image: url("Images/Pikachu.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 24.5em;
+    width: 36em;
+    position: relative;
+    display: ruby-text-container;;
+    margin-left: 32%; 
+    margin-top: -3%; 
 }
 
 .progress-bar {
     position: absolute;
     color: rgb(107, 107, 107);
-    min-height: 1vh;
+    min-height: 0.5vh;
     display: flex;
-    border-radius: 8px;
-    border: 1.5px solid rgba(0, 0, 0, 0.9);
-    margin-top: 16.8%;
-    margin-left: 500px;
+    border-radius: 0.5em;
+    border: 0.094em solid rgba(0, 0, 0, 0.9);
+    margin-top: -0.5%;
+    margin-left: 37%;
 }
 
 .preloader {
@@ -64,7 +53,7 @@
     content: "";
     position: absolute;
     background: rgba(239, 174, 174, 1);
-    border-radius: 8px;
+    border-radius: 0.5em;
     width: 0px;
     height: 20px;
     animation: preloader 10s infinite;
@@ -73,11 +62,10 @@
 .preloader p {
     margin: 0;
     line-height: 20px;
-    font-size: 20px;
+    font-size: 1.25rem;
     font-weight: bold;
     position: absolute;
-    color: black;
-    opacity: 0.9;
+    color: #333333;
     left: 50%;
     transform: translateX(-50%);
 }
@@ -95,5 +83,73 @@
     100% {
         width: 100%;
         opacity: 0;
+    }
+}
+
+@media (min-width: 300px) and (max-width: 768px) {
+    .logo {
+        background-image: url("Images/Logo-responsive.png");
+        background-repeat: no-repeat;
+        position: relative;
+        background-size: contain;
+        height: 14em;
+        width: 22em;
+        display: ruby-text-container;;
+        margin-left: -1.5%; 
+        margin-top: -4%;
+        background-position:center;
+        justify-tracks: center;
+    }
+    
+    .Pikachu {
+        background-image: url("Images/Pikachu-responsive.png");
+        background-repeat: no-repeat;
+        background-size: contain;
+        height: 24.5em;
+        width: 23em;
+        position: relative;
+        display: ruby-text-container;;
+        margin-left: -6%; 
+        margin-top: -16%; 
+    }
+    
+    .progress-bar {
+        position: absolute;
+        color: rgb(107, 107, 107);
+        min-height: 0.5vh;
+        display: flex;
+        border-radius: 0.5em;
+        border: 0.094em solid rgba(0, 0, 0, 0.9);
+        margin-top: -18%;
+        margin-left: 3%;
+    }
+    
+    .preloader {
+        margin:auto;
+        width: 320px;
+        height: 20px;
+        background: rgba(229, 226, 226, 0.1);
+        position: relative;
+    }
+    
+    .preloader:before{
+        content: "";
+        position: absolute;
+        background: rgba(239, 174, 174, 1);
+        border-radius: 0.5em;
+        width: 0px;
+        height: 20px;
+        animation: preloader 10s infinite;
+    }
+    
+    .preloader p {
+        margin: 0;
+        line-height: 20px;
+        font-size: 1.25rem;
+        font-weight: bold;
+        position: absolute;
+        color: #333333;
+        left: 50%;
+        transform: translateX(-50%);
     }
 }
