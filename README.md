@@ -129,8 +129,8 @@ Listado de problemas que se detectarón a través de tests de usabilidad  y cóm
 
 **5** Se hizo la iteración de los prototipos de baja fidelidad, se incluyerón las mejoras y se llego a un prototipo final de baja fidelidad.
 
-<img src="Itinerant_Prototypes/Pikachu_3.png">
-<img src="Itinerant_Prototypes/Features_2.png">
+<img src="Final_LowFidelity_Prototype/Pikachu_3.png">
+<img src="Final_LowFidelity_Prototype/Features_2.png">
 
 **6** Consiguiente a esto se diseñó el prototipo de alta fidelidad (Figma).
 
@@ -140,7 +140,7 @@ Listado de problemas que se detectarón a través de tests de usabilidad  y cóm
 <img src="Prototype_Figma/Page_4.1.png">
 <img src="Prototype_Figma/Page_4.2.png">
 <img src="Prototype_Figma/Page_4.3.png">
-<img src="Prototype_Figma/.Page_4.4.png">
+<img src="Prototype_Figma/Page_4.4.png">
 
 **Link a Figma:**
 <a href="https://www.figma.com/file/Ra2UDWwqATRlOsniRDb8Hz/Let%C2%B4s-go-Pokemon?node-id=117%3A56"></a>
