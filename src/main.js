@@ -3,17 +3,22 @@ import { example } from './data.js';
 import data from './data/pokemon/pokemon.js';
 // import data from './data/rickandmorty/rickandmorty.js';
 
-console.log(example, data);
+/*console.log(example, data);*/
 
-/*console.log(data.pokemon[0].img);
-document.getElementById("img-pokemon").src=data.pokemon[0].img;
-let frutas = ['manzana', 'piña','pera', 'kiw']
-console.log(frutas[0]);*/
 
-/*document.getElementById("welcome").style.display = "none";
-document.getElementById("pokemons").style.display = "block";
 
-let progress_bar = document.getElementById ("welcome");
+/*let progress_bar = document.getElementById ("welcome");
 setTimeout (function() {
     progress_bar.classList.add ("close");
 },9000);*/
+
+window.onload = function(){
+    let pagWelcome = document.getElementById("welcome");
+
+    pagWelcome.style.visibility = "hidden"
+    pagWelcome.style.opacity = "0";
+
+}
+
+console.log(data.pokemon[0].img);
+const pokemonsBulbasaur = document.getElementById("bulbasaur").src=data.pokemon[0].img;
