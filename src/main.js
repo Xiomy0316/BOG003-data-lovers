@@ -68,13 +68,6 @@ document.getElementById("pokemons").addEventListener("onload", function(event) {
     document.getElementById("pokemons").img = mostrar;
 });*/
 
-/*console.log(pokemons);
-document.getElementById("pokemons").addEventListener("onload", function(event) {
-    const pokemons =  data.pokemon[0].img;
-    let mostrar = document.getElementById("pokemons").src = pokemons;
-    document.getElementById("pokemons").img = mostrar;
-});*/
-
 /*var x = document.getElementById("myDIV");
 x.addEventListener("webkitAnimationEnd", myEndFunction);
 
@@ -85,17 +78,4 @@ object.onload = function(){myScript};*/
 innerHTML*/
 
 /*document.getElementById("welcome").style.display = "none";
-document.getElementById("pokemons").style.display = "block";*/
-
-/*let progress_bar = document.getElementById ("welcome");
-setTimeout (function() {
-    progress_bar.classList.add ("close");
-},9000);
-
-window.onload = function() {
-    let pagWelcome = document.getElementById("welcome");
-}
-
-document.getElementById("welcome").style.display = "hidden";
-document.getElementById("pokemons").style.display = "block";
-document.getElementById("welcome").style.display = "none";*/
+document.getElementById("pokemons-pp").style.display = "block";*/
