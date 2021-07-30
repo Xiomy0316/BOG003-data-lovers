@@ -30,19 +30,32 @@
       </div>
       </div>
     </section>
-    <section class="principal-pokemons" id="pokemons">
-      <div class="filter-buttons" id="filter">
-
-      </div>
-      <div class="container-principal-images" id="images-pokemons">
-        <img id="img-pikachu">
-        <img id="img-bulbasaur">
-        <img id="img-squirtle">
-        <img id="img-togepi">
-        <img id="img-cyndaquil">
-        <img id="img-chikorita">
-      </div>
+    <!--Pokémons principales-->
+    <section class="container-principal-images" id="images-pokemons">
+      <div class="row" id="pokemons-pp" hidden></div>
+      <template id="templateCard">
+        <div class=columns>
+          <div class="cards">
+        <img src="" class="img-pokemons">
+        <div class="cards-objects">
+          <h1 class="pokemon-names"></h1>
+          <h2 class="num-pokemons"></h2>
+          <h3 class="types"></h3>
+        </div>
+          </div>
+        </div>
+      </template>
     </section>
+    <!--<label>Elija un sabor de nieve:
+      <select class="tipo" name="tipo">
+          <option value="">Tipo</option>
+          <option value="chocolate">Chocolate</option>
+          <option value="sardina">Sardina</option>
+          <option value="vainilla">Vainilla</option>
+      </select>
+  </label>-->
+  
+  <div class="resultado"></div>
   </main>
   <script src="main.js" type="module"></script>
 </body>
