@@ -4,7 +4,7 @@
 
 **1** El proceso de diseño del producto comenzó con una investigación, la cual incluye una encuesta sobre Pokémon.
 
-<img src="Survey/Filter.png">
+<img src="Survey/Filters.png">
 <img src="Survey/Characteristics.png">
 <img src="Survey/General_Information.png">
 <img src="Survey/Specific_Information.png">
@@ -46,15 +46,23 @@ Para tener una visualización más rápida de los Pokémons.
 
 * Los Pokemons están organizados en 2 filas y 3 columnas.
 
+* Los Pokemons están organizados en orden numérico de menor a mayor.
+
+* Debe ser responsive para desktop, tablet y mobile.
+
 **Definición de terminado:**
 
 * El código cumple con la guía de estilos acordada. 
 
 * El código tiene, y pasa, los tests necesarios.
 
-* El código está en el repositorio.
+* El código está en el repositorio, más específicamente en la rama master.
 
-* El código ha sido hecho en pair-programming.
+* El proyecto está desplegado en gitHub Pages.
+
+* Se ha hecho pair-programming mínimo una hora al día.
+
+* Se ha hecho code-review en el equipo. 
 
 * La historia implementada ha sido testeada con, al menos 3 usuarios y se han incorporado las mejoras que se identificaron en este testeo de usabilidad.
 
@@ -79,9 +87,13 @@ Para reducir la cantidad de información y así poder elegir el Pokémon de mi a
 
 * El código tiene, y pasa, los tests necesarios.
 
-* El código está en el repositorio.
+* El código está en el repositorio, más específicamente en la rama master.
 
-* El código ha sido hecho en pair-programming.
+* El proyecto está desplegado en gitHub Pages.
+
+* Se ha hecho pair-programming mínimo una hora al día.
+
+* Se ha hecho code-review en el equipo. 
 
 * La historia implementada ha sido testeada con, al menos 3 usuarios y se han incorporado las mejoras que se identificaron en este testeo de usabilidad.
 
@@ -104,9 +116,13 @@ Para tener mayor facilidad de lectura sobre las características claves de cada 
 
 * El código tiene, y pasa, los tests necesarios.
 
-* El código está en el repositorio.
+* El código está en el repositorio, más específicamente en la rama master.
 
-* El código ha sido hecho en pair-programming.
+* El proyecto está desplegado en gitHub Pages.
+
+* Se ha hecho pair-programming mínimo una hora al día.
+
+* Se ha hecho code-review en el equipo. 
 
 * La historia implementada ha sido testeada con, al menos 3 usuarios y se han incorporado las mejoras que se identificaron en este testeo de usabilidad.
 
@@ -116,7 +132,7 @@ Para tener mayor facilidad de lectura sobre las características claves de cada 
 <img src="Itinerant_Prototypes/Pikachu_2.png">
 <img src="Itinerant_Prototypes/Pikachu_3.png">
 <img src="Itinerant_Prototypes/Main_Pokemons.png">
-<img src="Itinerant_Prototypes/Selection_Pokemons.png">
+<img src="Itinerant_Prototypes/Selection_Pokemon.png">
 <img src="Itinerant_Prototypes/Pikachu_Card.png">
 <img src="Itinerant_Prototypes/Features_1.png">
 <img src="Itinerant_Prototypes/Features_2.png">
@@ -129,8 +145,8 @@ Listado de problemas que se detectarón a través de tests de usabilidad  y cóm
 
 **5** Se hizo la iteración de los prototipos de baja fidelidad, se incluyerón las mejoras y se llego a un prototipo final de baja fidelidad.
 
-<img src="Itinerant_Prototypes/Pikachu_3.png">
-<img src="Itinerant_Prototypes/Features_2.png">
+<img src="Final_LowFidelity_Prototype/Pikachu_3.png">
+<img src="Final_LowFidelity_Prototype/Features_2.png">
 
 **6** Consiguiente a esto se diseñó el prototipo de alta fidelidad (Figma).
 
