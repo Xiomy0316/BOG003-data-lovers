@@ -46,15 +46,23 @@ Para tener una visualización más rápida de los Pokémons.
 
 * Los Pokemons están organizados en 2 filas y 3 columnas.
 
+* Los Pokemons están organizados en orden numérico de menor a mayor.
+
+* Debe ser responsive para desktop, tablet y mobile.
+
 **Definición de terminado:**
 
 * El código cumple con la guía de estilos acordada. 
 
 * El código tiene, y pasa, los tests necesarios.
 
-* El código está en el repositorio.
+* El código está en el repositorio, más específicamente en la rama master.
 
-* El código ha sido hecho en pair-programming.
+* El proyecto está desplegado en gitHub Pages.
+
+* Se ha hecho pair-programming mínimo una hora al día.
+
+* Se ha hecho code-review en el equipo. 
 
 * La historia implementada ha sido testeada con, al menos 3 usuarios y se han incorporado las mejoras que se identificaron en este testeo de usabilidad.
 
@@ -79,9 +87,13 @@ Para reducir la cantidad de información y así poder elegir el Pokémon de mi a
 
 * El código tiene, y pasa, los tests necesarios.
 
-* El código está en el repositorio.
+* El código está en el repositorio, más específicamente en la rama master.
 
-* El código ha sido hecho en pair-programming.
+* El proyecto está desplegado en gitHub Pages.
+
+* Se ha hecho pair-programming mínimo una hora al día.
+
+* Se ha hecho code-review en el equipo. 
 
 * La historia implementada ha sido testeada con, al menos 3 usuarios y se han incorporado las mejoras que se identificaron en este testeo de usabilidad.
 
@@ -104,9 +116,13 @@ Para tener mayor facilidad de lectura sobre las características claves de cada 
 
 * El código tiene, y pasa, los tests necesarios.
 
-* El código está en el repositorio.
+* El código está en el repositorio, más específicamente en la rama master.
 
-* El código ha sido hecho en pair-programming.
+* El proyecto está desplegado en gitHub Pages.
+
+* Se ha hecho pair-programming mínimo una hora al día.
+
+* Se ha hecho code-review en el equipo. 
 
 * La historia implementada ha sido testeada con, al menos 3 usuarios y se han incorporado las mejoras que se identificaron en este testeo de usabilidad.
 
