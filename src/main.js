@@ -3,22 +3,43 @@ import { example } from './data.js';
 import data from './data/pokemon/pokemon.js';
 // import data from './data/rickandmorty/rickandmorty.js';
 
-/*console.log(example, data);*/
+console.log(example, data);
 
 
 
-/*let progress_bar = document.getElementById ("welcome");
+let progress_bar = document.getElementById ("welcome");
 setTimeout (function() {
     progress_bar.classList.add ("close");
-},9000);*/
+    document.getElementById("items").style.display = "block";
 
-window.onload = function(){
-    let pagWelcome = document.getElementById("welcome");
+const pokemons = data.pokemon;
+console.table(pokemons);
 
-    pagWelcome.style.visibility = "hidden"
-    pagWelcome.style.opacity = "0";
+const items = document.getElementById("items");
+const templateCard = document.getElementById("pokemon_card").content;
+const fragment = document.createDocumentFragment();
 
-}
 
-console.log(data.pokemon[0].img);
-const pokemonsBulbasaur = document.getElementById("bulbasaur").src=data.pokemon[0].img;
+const mostrarcard = pokemons => {
+    pokemons.forEach(pokemon => {
+        templateCard.querySelector("h2").textContent = pokemon.name
+        templateCard.querySelector("img").setAttribute("src", pokemon.img)
+        templateCard.querySelector("span").textContent = pokemon.num
+        templateCard.querySelector("small").textContent = pokemon.type
+        const clone = templateCard.cloneNode(true)
+
+        fragment.appendChild(clone)
+    });
+    items.appendChild(fragment);
+};
+mostrarcard(pokemons);
+
+
+
+},9000);
+
+
+
+
+
+

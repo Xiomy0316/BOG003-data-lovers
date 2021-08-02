@@ -31,21 +31,30 @@
       </div>
       </div>
     </section>
-    <section class="principal-pokemons" id="pokemons">
-      <div class="filter-buttons" id="filter">
+
+    <div class="row" id="items"></div>
+
+    <template id="pokemon_card" style="display: none;">
+      <div class="colum">
+          <div class="card">
+              <img src="" alt="" id="pokemoncard">
+              <div class="card-body">
+                  <h2 class="namepoke">Nombre</h2>
+                  <span class="numberpoke">numero</span>
+                  <small class="typepoke">tipo</small>
+
+              </div>
+
+          </div>
 
       </div>
-      <div class="poke_container" id="poke_container">
-       
-      </div>
-    </section>
-    <section class="container-principal" id="imges-pokemons">
-      <div class="principal-pokemons" id="pokemons">
-        <img id="bulbasaur">
-      
-      </div>
 
-    </section>
+  </template>
+<!--barra de carga
+      <div id="pokemon_card" style="display: none;">
+      <p id="nombrepoke"></p>
+      <img id="pokecard" >
+    </div>-->
   </main>
   <script src="main.js" type="module"></script>
 </body>
