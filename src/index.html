@@ -31,18 +31,20 @@
       </div>
       </div>
     </section>
-
+<!--cartas -->
     <div class="row" id="items"></div>
 
     <template id="pokemon_card" style="display: none;">
       <div class="colum">
-          <div class="card">
+          <div class="card" id="card">
+          
               <img src="" alt="" id="pokemoncard">
               <div class="card-body">
                   <h2 class="namepoke">Nombre</h2>
-                  <span class="numberpoke">numero</span>
-                  <small class="typepoke">tipo</small>
-
+                  <span class="numberpoke"></span>
+                  <small class="typepoke tipo">tipo</small>
+                  <small class="secondpoke tipo"></small>
+                  
               </div>
 
           </div>
@@ -50,11 +52,7 @@
       </div>
 
   </template>
-<!--barra de carga
-      <div id="pokemon_card" style="display: none;">
-      <p id="nombrepoke"></p>
-      <img id="pokecard" >
-    </div>-->
+
   </main>
   <script src="main.js" type="module"></script>
 </body>
