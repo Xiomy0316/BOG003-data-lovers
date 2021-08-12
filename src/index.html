@@ -4,7 +4,9 @@
 <head>
   <meta charset="utf-8">
   <title>Data Lovers</title>
-  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum scale=1.0">
+  <meta name="viewport"
+    content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
 </head>
@@ -23,37 +25,93 @@
         <figure class="Pikachu">
           <img>
         </figure>
-         <!--barra de carga-->
-      <div class="progress-bar" id="progress-bar">
-        <div class="preloader">
-        <p>Loading...</p>
+        <div class="progress-bar" id="progress">
+          <div class="preloader">
+            <p>Loading...</p>
+          </div>
         </div>
       </div>
+    </section>
+    <!--Pokémons principales-->
+    <section class="container-select" id="images-pokemons">
+      <div class="text">
+        <label>Filter by:</label>
+      </div>
+      <select class="select-type" name="type" id="type-select">
+        <option value="type" id="type" class="Type">Type</option>
+        <option value="normal" id="normal" class="Normal">Normal</option>
+        <option value="grass" id="grass" class="Grass">Grass</option>
+        <option value="fire" id="fire" class="Fire">Fire</option>
+        <option value="water" id="water" class="Water">Water</option>
+        <option value="steel" id="steel" class="Steel">Steel</option>
+        <option value="electric" id="electric" class="Electric">Electric</option>
+        <option value="ice" id="ice" class="Ice">Ice</option>
+        <option value="fighting" id="fighting" class="Fighting">Fighting</option>
+        <option value="poison" id="poison" class="Poison">Poison</option>
+        <option value="rock" id="rock" class="Rock">Rock</option>
+        <option value="flying" id="flying" class="Flying">Flying</option>
+        <option value="psychic" id="psychic" class="Psychic">Psychic</option>
+        <option value="bug" id="bug" class="Bug">Bug</option>
+        <option value="ground" id="ground" class="Ground">Ground</option>
+        <option value="ghost" id="ghost" class="Ghost">Ghost</option>
+        <option value="dragon" id="dragon" class="Dragon">Dragon</option>
+        <option value="dark" id="dark" class="Dark">Dark</option>
+      </select>
+      <select class="select-region" name="region" id="region-select">
+        <option value="region" id="region" class="Region">Region</option>
+        <option value="kanto" id="kanto" class="Kanto">Kanto</option>
+        <option value="johto" id="johto" class="Johto">Johto</option>
+      </select>
+      <!--<select class="select-weaknesses" name="weaknesses" id="weaknesses-select">
+        <option value="weaknesses" id="weaknesses" class="Weaknesses">Weaknesses</option>
+        <option value="normal" id="normalW" class="NormalW">Normal</option>
+        <option value="grass" id="grassW" class="GrassW">Grass</option>
+        <option value="fire" id="fireW" class="FireW">Fire</option>
+        <option value="water" id="waterW" class="WaterW">Water</option>
+        <option value="steel" id="steelW" class="SteelW">Steel</option>
+        <option value="electric" id="electricW" class="ElectricW">Electric</option>
+        <option value="ice" id="iceW" class="IceW">Ice</option>
+        <option value="fighting" id="fightingW" class="FightingW">Fighting</option>
+        <option value="poison" id="poisonW" class="PoisonW">Poison</option>
+        <option value="rock" id="rockW" class="RockW">Rock</option>
+        <option value="flying" id="flyingW" class="FlyingW">Flying</option>
+        <option value="psychic" id="psychicW" class="PsychicW">Psychic</option>
+        <option value="bug" id="bugW" class="BugW">Bug</option>
+        <option value="ground" id="groundW" class="GroundW">Ground</option>
+        <option value="ghost" id="ghostW" class="GhostW">Ghost</option>
+        <option value="dragon" id="dragonW" class="DragonW">Dragon</option>
+        <option value="dark" id="darkW" class="DarkW">Dark</option>
+      </select>
+      <select class="select-resistant" name="resistant" id="resistant-select">
+        <option value="resistant" id="resistant" class="Resistant">Resistant</option>
+      </select>-->
+      <select class="select-order" name="order" id="order-select">
+        <option value="order" id="order" class="Order">Order by</option>
+        <option value="A-Z" id="A-Z" class="right">A-Z</option>
+        <option value="Z-A" id="Z-A" class="left">Z-A</option>
+        <option value="numberSup-numberInf" id="numberSup-numberInf" class="right2">Number superior</option>
+        <option value="numberInf-numberSup" id="numberInf-numberSup" class="left2">Number inferior</option>
+      </select>
+    </section>
+    <div class="row" id="pokemons-pp" hidden>
+      <img src="" class="img-pokemons">
+      <h2 class="pokemon-names"></h2>
+      <h3 class="num-pokemons"></h3>
+      <small class="firstType type"></small>
+      <small class="secondType type"></small>
+    </div>
+    <section class="espesific-information" id="espesificInformation">
+      <div class="card-information" id="modalInformation" hidden>
+        <img src="" class="img-card">
+        <h2 class="card-names"></h2>
+        <h3 class="card-num"></h3>
+        <small class="firtsType type" display="none"></small>
+        <small class="secondType type" display="none"></small>
+        <p class="textDescription"></p>
       </div>
     </section>
-<!--cartas -->
-    <div class="row" id="items"></div>
-
-    <template id="pokemon_card" style="display: none;">
-      <div class="colum">
-          <div class="card" id="card">
-          
-              <img src="" alt="" id="pokemoncard">
-              <div class="card-body">
-                  <h2 class="namepoke">Nombre</h2>
-                  <span class="numberpoke"></span>
-                  <small class="typepoke tipo">tipo</small>
-                  <small class="secondpoke tipo"></small>
-                  
-              </div>
-
-          </div>
-
-      </div>
-
-  </template>
-
   </main>
   <script src="main.js" type="module"></script>
 </body>
-</html>  
+
+</html>
