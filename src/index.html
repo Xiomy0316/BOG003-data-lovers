@@ -23,6 +23,7 @@
         <figure class="Pikachu">
           <img>
         </figure>
+         <!--barra de carga-->
       <div class="progress-bar" id="progress-bar">
         <div class="preloader">
         <p>Loading...</p>
@@ -30,19 +31,28 @@
       </div>
       </div>
     </section>
-    <section class="principal-pokemons" id="pokemons">
-      <div class="filter-buttons" id="filter">
+<!--cartas -->
+    <div class="row" id="items"></div>
+
+    <template id="pokemon_card" style="display: none;">
+      <div class="colum">
+          <div class="card" id="card">
+          
+              <img src="" alt="" id="pokemoncard">
+              <div class="card-body">
+                  <h2 class="namepoke">Nombre</h2>
+                  <span class="numberpoke"></span>
+                  <small class="typepoke tipo">tipo</small>
+                  <small class="secondpoke tipo"></small>
+                  
+              </div>
+
+          </div>
 
       </div>
-      <div class="container-principal-images" id="images-pokemons">
-        <img id="img-pikachu">
-        <img id="img-bulbasaur">
-        <img id="img-squirtle">
-        <img id="img-togepi">
-        <img id="img-cyndaquil">
-        <img id="img-chikorita">
-      </div>
-    </section>
+
+  </template>
+
   </main>
   <script src="main.js" type="module"></script>
 </body>
