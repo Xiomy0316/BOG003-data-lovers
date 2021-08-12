@@ -23,6 +23,7 @@
         <figure class="Pikachu">
           <img>
         </figure>
+         <!--barra de carga-->
       <div class="progress-bar" id="progress-bar">
         <div class="preloader">
         <p>Loading...</p>
@@ -30,32 +31,28 @@
       </div>
       </div>
     </section>
-    <!--Pokémons principales-->
-    <section class="container-principal-images" id="images-pokemons">
-      <div class="row" id="pokemons-pp" hidden></div>
-      <template id="templateCard">
-        <div class=columns>
-          <div class="cards">
-        <img src="" class="img-pokemons">
-        <div class="cards-objects">
-          <h1 class="pokemon-names"></h1>
-          <h2 class="num-pokemons"></h2>
-          <h3 class="types"></h3>
-        </div>
+<!--cartas -->
+    <div class="row" id="items"></div>
+
+    <template id="pokemon_card" style="display: none;">
+      <div class="colum">
+          <div class="card" id="card">
+          
+              <img src="" alt="" id="pokemoncard">
+              <div class="card-body">
+                  <h2 class="namepoke">Nombre</h2>
+                  <span class="numberpoke"></span>
+                  <small class="typepoke tipo">tipo</small>
+                  <small class="secondpoke tipo"></small>
+                  
+              </div>
+
           </div>
-        </div>
-      </template>
-    </section>
-    <!--<label>Elija un sabor de nieve:
-      <select class="tipo" name="tipo">
-          <option value="">Tipo</option>
-          <option value="chocolate">Chocolate</option>
-          <option value="sardina">Sardina</option>
-          <option value="vainilla">Vainilla</option>
-      </select>
-  </label>-->
-  
-  <div class="resultado"></div>
+
+      </div>
+
+  </template>
+
   </main>
   <script src="main.js" type="module"></script>
 </body>

@@ -15,7 +15,7 @@ body {
     width: 35em;
     display: ruby-text-container;;
     margin-left: 32%; 
-    margin-top: -4.5%; 
+    margin-top: 0%; 
 }
 
 .Pikachu {
@@ -27,9 +27,9 @@ body {
     position: relative;
     display: ruby-text-container;;
     margin-left: 32%; 
-    margin-top: -3%; 
+    margin-top: -1%; 
 }
-
+/* barra*/
 .progress-bar {
     position: absolute;
     color: rgb(107, 107, 107);
@@ -69,7 +69,7 @@ body {
     left: 50%;
     transform: translateX(-50%);
 }
-
+/*transicion de pagina a pagina*/
 .close {
     transform:translateY(-200%);
     transition: all 0s;
@@ -85,7 +85,7 @@ body {
         opacity: 0;
     }
 }
-
+/*responsive*/
 @media (min-width: 280px) and (max-width: 415px) and (orientation: portrait) {
     .logo {
         background-image: url("Images/Logo-responsive.png");
@@ -220,4 +220,219 @@ body {
         left: 50%;
         transform: translateX(-50%);
     }
-} 
+}
+@media (min-width: 280px) and (max-width: 660px) and (orientation: landscape) {
+    .logo {
+        background-image: url("Images/Logo-responsive.png");
+        background-repeat: no-repeat;
+        position: relative;
+        background-size: contain;
+        height: 7em;
+        width: 11em;
+        display: ruby-text-container;;
+        margin-left: 35%; 
+        margin-top: -7.5%;
+        background-position:center;
+        justify-tracks: center;
+    }
+    
+    .Pikachu {
+        background-image: url("Images/Pikachu-responsive.png");
+        background-repeat: no-repeat;
+        background-size: contain;
+        height: 8em;
+        position: relative;
+        display: ruby-text-container;;
+        margin-left: 33%; 
+        margin-top: -3%; 
+    }
+    
+    .progress-bar {
+        position: absolute;
+        color: rgb(107, 107, 107);
+        min-height: 0.5vh;
+        display: flex;
+        border-radius: 0.5em;
+        border: 0.094em solid rgba(0, 0, 0, 0.9);
+        margin-top: 0%;
+        margin-left: 38%;
+    }
+    
+    .preloader {
+        margin:auto;
+        width: 150px;
+        height: 10px;
+        background: rgba(229, 226, 226, 0.1);
+        position: relative;
+    }
+    
+    .preloader:before{
+        content: "";
+        position: absolute;
+        background: rgba(239, 174, 174, 1);
+        border-radius: 0.5em;
+        width: 0px;
+        height: 10px;
+        animation: preloader 10s infinite;
+    }
+    
+    .preloader p {
+        margin: 0;
+        line-height: 9px;
+        font-size: 0.7rem;
+        font-weight: bold;
+        position: absolute;
+        color: #333333;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+@media (min-width: 400px) and (max-width: 840px) and (orientation: landscape) {
+    .logo {
+        background-image: url("Images/Logo-responsive.png");
+        background-repeat: no-repeat;
+        position: relative;
+        background-size: contain;
+        height: 8em;
+        width: 12em;
+        display: ruby-text-container;;
+        margin-left: 35%; 
+        margin-top: -9%;
+        background-position:center;
+        justify-tracks: center;
+    }
+    
+    .Pikachu {
+        background-image: url("Images/Pikachu-responsive.png");
+        background-repeat: no-repeat;
+        background-size: contain;
+        height: 8em;
+        position: relative;
+        display: ruby-text-container;;
+        margin-left: 33%; 
+        margin-top: -3%; 
+    }
+    
+    .progress-bar {
+        position: absolute;
+        color: rgb(107, 107, 107);
+        min-height: 0.5vh;
+        display: flex;
+        border-radius: 0.5em;
+        border: 0.094em solid rgba(0, 0, 0, 0.9);
+        margin-top: 0%;
+        margin-left: 36%;
+    }
+    
+    .preloader {
+        margin:auto;
+        width: 200px;
+        height: 10px;
+        background: rgba(229, 226, 226, 0.1);
+        position: relative;
+    }
+    
+    .preloader:before{
+        content: "";
+        position: absolute;
+        background: rgba(239, 174, 174, 1);
+        border-radius: 0.5em;
+        width: 0px;
+        height: 10px;
+        animation: preloader 10s infinite;
+    }
+    
+    .preloader p {
+        margin: 0;
+        line-height: 9px;
+        font-size: 0.7rem;
+        font-weight: bold;
+        position: absolute;
+        color: #333333;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
+/*tarjetas pokemon*/
+.row {
+    display: flex;
+    padding: 15px;
+    flex-wrap: wrap;
+    margin-left: 8%;
+  
+    margin-top: -42%;
+  }
+  
+  .colum {
+    flex: 20%;
+    padding: 10px;
+  }
+  
+  .card {
+ 
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+  border-radius: 10px;
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
+  text-align: center;
+  color: rgb(124, 124, 124);
+  width:239px;
+  height: 283px;
+  }
+  
+/*tarjetas por tipo*/
+  .fire{
+      background-color: #FDDFDF;
+
+  }
+
+  .grass{
+    background-color: #DEFDE0;
+  }
+
+  .water{
+    background-color: #DEF3FD;  
+  }
+  .electric{
+      background-color: #FCF7DE;
+  }
+  .ground{
+
+   background-color: #f4e7da;
+   }
+  .rock {
+        background-color: #d5d5d4;
+    }
+  .fairy{
+        background-color: #fceaff;
+    }
+
+  .poison{
+        background-color: #98d7a5;
+    }
+  .bug {
+        background-color: #f8d5a3;
+    }
+  .dragon {
+        background-color: #97b3e6;
+    }
+
+  .psychic {
+        background-color: #eaeda1;
+    }
+  .flying {
+        background-color: #F5F5F5;
+    }
+  .fighting { 
+        background-color: #E6E0D4;
+    }
+  .normal {
+        background-color: #F5F5F5;
+    }
+    /*recuadro para los tipos*/
+  .tipo{
+    background-color: rgba(0, 0, 0, 0.1);
+	border-radius: 10px;
+	font-size: 0.8em;
+	padding: 5px 10px;
+  }
