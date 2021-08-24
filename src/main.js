@@ -1,28 +1,27 @@
-import { filterType, filterRegion, filterOrder, filterOrderNum } from './data.js';
+import { filterType, filterRegion, filterOrder, filterOrderNum, prom } from './data.js';
 import pokemon from './data/pokemon/pokemon.js';
 // import data from './data/lol/lol.js';
 import data from './data/pokemon/pokemon.js';
 // import data from './data/rickandmorty/rickandmorty.js';
 
+//Llamado global de la data
+const pokemons = data.pokemon;
+
+//Función de carga
 const progress_bar = document.getElementById("welcome");
 setTimeout(function () {
     progress_bar.classList.add("close");
-    const pokemons = data.pokemon;
-    //console.table(pokemons);
     document.getElementById("images-pokemons").style.display = "flex";
     visivilityCard(pokemons);
-
 }, 9000);
 
+//Creación de las tarjetas generales
 const visivilityCard = (pokemons) => {
     pokemons.forEach(poke => {
         let cardsPokemon = document.createElement("div");
         cardsPokemon.setAttribute("class", "cardsPokemon");
         cardsPokemon.setAttribute("id", `${poke.num}`);
-        /*cardsPokemon.addEventListener("click", () => modalInformation(poke))
-        document.getElementById("pokemons-pp").innerHTML = ""; 
-    });*/
-        /*modalInformation(poke));*/
+        cardsPokemon.addEventListener("click", (e) => modalInformation(poke, e))
 
         let individualCardPokemon = document.createElement("div");
         individualCardPokemon.setAttribute("class", "individualCardPokemon");
@@ -52,7 +51,6 @@ const visivilityCard = (pokemons) => {
         if (poke.type[0] !== undefined) {
             firstType.textContent = `${poke.type[0]}`;
         }
-
 
         if (poke.type[0] === "fire") {
             individualCardPokemon.classList.add("fire");
@@ -104,12 +102,261 @@ const visivilityCard = (pokemons) => {
         showPokemons.appendChild(cardsPokemon);
 
     });
+
 };
 
+//Tarjetas específicas modal
+const modalInformation = (poke) => {
+
+    let modal = document.querySelector(".modal");
+    let modalC = document.querySelector(".espesific-information");
+    modalC.style.visibility = "visible";
+    modal.classList.toggle("card-information");
+
+
+    const close = document.createElement("div");
+    close.classList.add("close-btn");
+    close.innerHTML = `<img src="images/close.png" class="imgClose"> `;
+    modal.appendChild(close);
+
+
+    close.addEventListener("click", () => {
+        console.log("cerrar", close);
+        modalC.style.visibility = "hidden";
+        modal.classList.toggle("card-information");
+        document.getElementById("modalInformation").innerHTML = "";
+    })
+
+    document.addEventListener("click", function (e) {
+        if (e.target === modalC) {
+            modal.classList.toggle("card-information");
+            document.getElementById("modalInformation").innerHTML = "";
+
+            setTimeout(function () {
+                modalC.style.visibility = "hidden";
+            }, 300)
+        }
+    })
+
+    const upper = document.createElement("div");
+    upper.classList.add("upper");
+    modal.appendChild(upper);
+
+    let namePoke = document.createElement("h2");
+    namePoke.setAttribute("class", "namePoke");
+    namePoke.textContent = `${poke.name}`;
+    upper.appendChild(namePoke);
+
+    let numberPokemon = document.createElement("h3");
+    numberPokemon.setAttribute("class", "numberPoke");
+    numberPokemon.textContent = `#${poke.num}`;
+    upper.appendChild(numberPokemon);
+
+    let pokeImg = document.createElement("img");
+    pokeImg.setAttribute("class", "pokemonImg");
+    pokeImg.setAttribute("src", `${poke.img}`);
+    upper.appendChild(pokeImg);
+
+    const btnWindowA = document.createElement("button");
+    btnWindowA.classList.add("btnWindowA");
+    btnWindowA.innerText = "Description";
+    upper.appendChild(btnWindowA);
+
+    const btnWindowB = document.createElement("button");
+    btnWindowB.classList.add("btnWindowB");
+    btnWindowB.innerText = "Evolutions";
+    upper.appendChild(btnWindowB);
+
+    const btnWindowC = document.createElement("button");
+    btnWindowC.classList.add("btnWindowC");
+    btnWindowC.innerText = "Stats";
+    upper.appendChild(btnWindowC);
+
+    const btnWindowD = document.createElement("button");
+    btnWindowD.classList.add("btnWindowD");
+    btnWindowD.innerText = "Attacks and Movements";
+    upper.appendChild(btnWindowD);
+
+    const bodyA = document.createElement("div");
+    bodyA.classList.add("bodyA");
+    bodyA.setAttribute("hidden", "");
+    bodyA.setAttribute("id", "modalBody");
+    upper.appendChild(bodyA);
+
+    let description = document.createElement("div");
+    description.classList.add("description");
+    bodyA.appendChild(description);
+    description.textContent = poke.about;
+
+    let secondType = document.createElement("small");
+    secondType.setAttribute("class", "secondType type");
+    if (poke.type[1] !== undefined) {
+        secondType.textContent =`${poke.type[1]}`;
+        bodyA.appendChild(secondType);
+    }
+    let firstType = document.createElement("small");
+    firstType.setAttribute("class", "firstType type");
+    if (poke.type[0] !== undefined) {
+        firstType.textContent = `${poke.type[0]}`;
+        bodyA.appendChild(firstType);
+    };
+
+    let rarity = document.createElement("div");
+    rarity.classList.add("rarity");
+    rarity.textContent = "Rarity:" + `${poke["pokemon-rarity"]}`;
+    bodyA.appendChild(rarity);
+
+    let generation = document.createElement("div");
+    generation.classList.add("generation");
+    generation.textContent = "Generation:" + `${poke.generation.num}`;
+    bodyA.appendChild(generation);
+
+    let height = document.createElement("div");
+    height.classList.add("height");
+    height.textContent = "Height:" + `${poke.size.height}`;
+    bodyA.appendChild(height);
+
+    let weight = document.createElement("div");
+    weight.classList.add("weight");
+    weight.textContent = "Weight:" + `${poke.size.weight}`;
+    bodyA.appendChild(weight);
+
+    const bodyB = document.createElement("div");
+    bodyB.classList.add("bodyB");
+    bodyB.setAttribute("hidden", "");
+    bodyB.setAttribute("id", "modalBody");
+    upper.appendChild(bodyB);
+
+    let egg = document.createElement("div");
+    egg.classList.add("egg");
+    egg.textContent = `${poke.egg}`;
+    bodyB.appendChild(egg);
+
+    /*let distance = document.createElement("div");
+    distance.classList.add("distance");
+    bodyB.appendChild(distance);
+    if(poke["buddy-distance"] === undefined) {
+        distance.textContent = `${poke["buddy-distance"]}`;
+    }*/
+
+    let evolutionCandy = document.createElement("div");
+    evolutionCandy.classList.add("evolutionCandy");
+    evolutionCandy.textContent = `${poke.evolution.candy}`;
+    bodyB.appendChild(evolutionCandy);
+
+    /*let prevEvolution = document.createElement("div");
+    prevEvolution.classList.add("prevEvolution");
+    if (poke.evolution !== undefined) {
+    prevEvolution.textContent = `${poke.evolution["prev-evolution"]}`;
+    bodyB.appendChild(prevEvolution);
+    }
+
+    let nextEvolution = document.createElement("div");
+    nextEvolution.classList.add("nextEvolution");
+    nextEvolution.textContent = `${poke.evolution["next-evolution"]}`;
+    bodyB.appendChild(nextEvolution);*/
+
+    const bodyC = document.createElement("div");
+    bodyC.classList.add("bodyC");
+    bodyC.setAttribute("hidden", "");
+    bodyC.setAttribute("id", "modalC");
+    modal.appendChild(bodyC);
+
+    const estadisticPoke = document.createElement("div");
+    estadisticPoke.classList.add("estadisticPoke");
+    bodyC.appendChild(estadisticPoke);
+    modal.appendChild(bodyC);
+
+    const attackPoke = document.createElement("div");
+    attackPoke.textContent = "Attack:" + poke.stats["base-attack"];
+    estadisticPoke.appendChild(attackPoke);
+
+    const defense = document.createElement("div");
+    defense.textContent = "Defense:" + poke.stats["base-defense"];
+    estadisticPoke.appendChild(defense);
+
+    const stamina = document.createElement("div");
+    stamina.textContent = "Stamina:" + poke.stats["base-stamina"];
+    estadisticPoke.appendChild(stamina);
+
+    const cpMax = document.createElement("div");
+    cpMax.textContent = "Max-CP:" + poke.stats["max-cp"];
+    estadisticPoke.appendChild(cpMax);
+
+    const hpMax = document.createElement("div");
+    hpMax.textContent = "Max-HP:" + poke.stats["max-hp"];
+    estadisticPoke.appendChild(hpMax);
+
+    const average = document.createElement("div");
+    average.textContent = "Average:" + Math.round((parseInt(poke.stats["base-attack"]) + parseInt(poke.stats["base-defense"]) + parseInt(poke.stats["base-stamina"]) ) / 3);
+    estadisticPoke.appendChild(average);
+
+    const bodyD = document.createElement("div");
+    bodyD.classList.add("bodyD");
+    bodyD.setAttribute("hidden", "");
+    bodyD.setAttribute("id", "modalD");
+    modal.appendChild(bodyD);
+
+    let quickMove = document.createElement("div");
+    quickMove.classList.add("quickMove");
+    quickMove.textContent = "Name:" + poke["quick-move"][0]["name"] + "Base-damage:" + poke["quick-move"][0]["base-damage"];
+    ;
+    bodyD.appendChild(quickMove);
+
+//Botones ventanas modal
+    btnWindowA.addEventListener("click", () => {
+        console.log(document.querySelector(".bodyB"));
+        document.querySelector(".bodyA").style.display = "block";
+        document.querySelector(".bodyB").style.display = "none";
+        document.querySelector(".bodyC").style.display = "none";
+        document.querySelector(".bodyD").style.display = "none";
+    })
+
+    btnWindowB.addEventListener("click", () => {
+        document.querySelector(".bodyA").style.display = "none";
+        document.querySelector(".bodyB").style.display = "block";
+        document.querySelector(".bodyC").style.display = "none";
+        document.querySelector(".bodyD").style.display = "none";
+    })
+
+    btnWindowC.addEventListener("click", () => {
+        document.querySelector(".bodyA").style.display = "none";
+        document.querySelector(".bodyB").style.display = "none";
+        document.querySelector(".bodyC").style.display = "block";
+        document.querySelector(".bodyD").style.display = "none";
+    })
+
+    btnWindowD.addEventListener("click", () => {
+        document.querySelector(".bodyA").style.display = "none";
+        document.querySelector(".bodyB").style.display = "none";
+        document.querySelector(".bodyC").style.display = "none";
+        document.querySelector(".bodyD").style.display = "block";
+    })
+    
+    
+
+    /*export const prom = (pokemons) => {
+
+        let bases = pokemons.map(function (poke) {
+          poke.average = Math.round((parseInt(poke.stats["base-attack"]) + parseInt(poke.stats["base-defense"]) + parseInt(poke.stats["base-stamina"]) ) / 3);
+          return poke
+          
+        })
+        
+        return bases;*/
+      
+
+    /*document.getElementById("stadisticsPower").addEventListener("click", () => {
+        document.getElementById("pokemons-pp").innerHTML = "";
+        const attack = calculation(pokemons);
+        console.log(attack);
+        //visivilityCard(attack);
+    });*/
+}
+//Filtros
 document.getElementById("type-select").addEventListener("change", () => {
     const type_select = document.getElementById("type-select").value;
     document.getElementById("pokemons-pp").innerHTML = "";
-    const pokemons = data.pokemon;
     const pokemonFilter = filterType(pokemons, type_select);
     visivilityCard(pokemonFilter);
 });
@@ -117,7 +364,6 @@ document.getElementById("type-select").addEventListener("change", () => {
 document.getElementById("region-select").addEventListener("change", () => {
     const region_select = document.getElementById("region-select").value;
     document.getElementById("pokemons-pp").innerHTML = "";
-    const pokemons = data.pokemon;
     const regionFilter = filterRegion(pokemons, region_select);
     visivilityCard(regionFilter);
 });
@@ -125,7 +371,6 @@ document.getElementById("region-select").addEventListener("change", () => {
 document.getElementById("order-select").addEventListener("change", () => {
     const order_select = document.getElementById("order-select").value;
     document.getElementById("pokemons-pp").innerHTML = "";
-    const pokemons = data.pokemon;
 
     if (order_select === "A-Z") {
         visivilityCard(filterOrder(pokemons))
@@ -139,189 +384,33 @@ document.getElementById("order-select").addEventListener("change", () => {
 
 });
 
+/*function sumStadistics()  {
 
-/*document.getElementById("pokemons-pp").addEventListener("click", () => {
-    const modalInformation = document.getElementById("modalInformation");
+    const attack = document.getElementById("stadisticsPower");
+    attack.innerHTML = prom(pokemons, "base-attack");
+
+    const defense = document.getElementById("stadisticsDefense");
+    defense.innerHTML = prom(pokemons, "base-defense");;
+
+    const stamina = document.getElementById("stadisticsStamina");
+    stamina.innerHTML = prom(pokemons, "base-stamina");
+
+}*/
+
+/*document.getElementById("stadisticsButton").addEventListener("click", () => {
+    console.log("hola")
+    //const stadistics = document.getElementById("stadisticsPower");
     document.getElementById("pokemons-pp").innerHTML = "";
-    const pokemons = data.pokemon;
-    visivilityCard(modalInformation)
-
+    sumStadistics()
+    //console.log(attack);
+    //visivilityCard(attack);
 });*/
 
-document.addEventListener('click', function (e) {
-    const pokemons = data.pokemon;
-    if (e.target.id == 'individualCardPokemon') {
-        document.getElementById("pokemons-pp").innerHTML = data.pokemon[e.target.dataset.position].name;
-        console.log(data.pokemon[e.target.dataset.position])
+/*document.getElementById("stadisticsPower").addEventListener("click", () => {
+    document.getElementById("pokemons-pp").innerHTML = "";
+    const attack = prom(pokemons);
+    console.log(attack);
+    visivilityCard(attack);
 
-    }
-
-    let informationCard = document.getElementById("modalInformation");
-
-    const showModal = document.createElement("div");
-    showModal.classList.add("showModal");
-    showModal.setAttribute("id", `${e}`);
-    showModal.setAttribute("hidden", "");
-    informationCard.appendChild(showModal);
-
-    let especificCardPokemon = document.createElement("div");
-    especificCardPokemon.setAttribute("class", "especificCardPokemon");
-    especificCardPokemon.setAttribute("id", "especificCardPokemon");
-
-    let pokeImg = document.createElement("img");
-    pokeImg.setAttribute("class", "pokeImg");
-    pokeImg.setAttribute("src", `${e.img}`);
-
-    let namePokemon = document.createElement("h2");
-    namePokemon.setAttribute("class", "namePokemon");
-    namePokemon.textContent = `${e.name}`;
-
-    let numberPokemon = document.createElement("h3");
-    numberPokemon.setAttribute("class", "numberPokemon");
-    numberPokemon.textContent = `#${e.num}`;
-
-    const windowA = document.createElement("div");
-    windowA.classList.add("windowA");
-    windowA.setAttribute("id", "bodyWindowA");
-
-    let description = document.createElement("p");
-    description.setAttribute("class", "description")
-    description.textContent = `${e.about}`;
-
-    let secondType = document.createElement("small");
-    secondType.setAttribute("class", "secondType type");
-    if (e.type[1] !== undefined) {
-        secondType.textContent = `${e.type[1]}`;
-    }
-    let firstType = document.createElement("small");
-    firstType.setAttribute("class", "firstType type");
-    if (e.type[0] !== undefined) {
-        firstType.textContent = `${e.type[0]}`;
-    };
-
-    let rarity = document.createElement("h2");
-    rarity.setAttribute("class", "rarity");
-    rarity.textContent = `${e.pokemon - rarity}`;
-
-    let generation = document.createElement("h2");
-    generation.setAttribute("class", "generation");
-    generation.textContent = `${e.generation}`;
-
-    let height = document.createElement("h2");
-    height.setAttribute("class", "height");
-    height.textContent = `${e.size}`;
-
-    let weight = document.createElement("h2");
-    weight.setAttribute("class", "weight");
-    weight.textContent = `${e.size}`;
-
-    showModal .appendChild(especificCardPokemon);
-    especificCardPokemon.appendChild(pokeImg);
-    especificCardPokemon.appendChild(namePokemon);
-    especificCardPokemon.appendChild(numberPokemon);
-    especificCardPokemon.appendChild(description);
-    especificCardPokemon.appendChild(firstType);
-    especificCardPokemon.appendChild(secondType);
-    especificCardPokemon.appendChild(rarity);
-    especificCardPokemon.appendChild(generation);
-    especificCardPokemon.appendChild(height);
-    especificCardPokemon.appendChild(weight);
-
-    let showPoke = document.getElementById("modalInformation");
-    showPoke.appendChild(showModal);
-
-
-});
-
-/*const modalInformation = (pokemons) => {
-    pokemons.forEach(poke => {
-
-        let informationCard = document.getElementById("modalInformation");
-
-        const showModal = document.createElement("div");
-        showModal.classList.add("showModal");
-        showModal.setAttribute("id", `${poke}`);
-        showModal.setAttribute("hidden", "");
-        informationCard.appendChild(showModal);
-
-        let cardsPokemon = document.createElement("div");
-        cardsPokemon.setAttribute("class", "cardsPokemon");
-        cardsPokemon.setAttribute("id", `${poke.num}`);
-
-        let especificCardPokemon = document.createElement("div");
-        especificCardPokemon.setAttribute("class", "especificCardPokemon");
-        especificCardPokemon.setAttribute("id", "especificCardPokemon");
-
-
-        let pokeImg = document.createElement("img");
-        pokeImg.setAttribute("class", "pokeImg");
-        pokeImg.setAttribute("src", `${poke.img}`);
-
-        let namePokemon = document.createElement("h2");
-        namePokemon.setAttribute("class", "namePokemon");
-        namePokemon.textContent = `${poke.name}`;
-
-        let numberPokemon = document.createElement("h3");
-        numberPokemon.setAttribute("class", "numberPokemon");
-        numberPokemon.textContent = `#${poke.num}`;
-
-
-        const windowA = document.createElement("div");
-        windowA.classList.add("windowA");
-        windowA.setAttribute("id", "bodyWindowA");
-
-        let description = document.createElement("p");
-        description.setAttribute("class", "description")
-        description.textContent = `${poke.about}`;
-
-        let secondType = document.createElement("small");
-        secondType.setAttribute("class", "secondType type");
-        if (poke.type[1] !== undefined) {
-            secondType.textContent = `${poke.type[1]}`;
-        }
-        let firstType = document.createElement("small");
-        firstType.setAttribute("class", "firstType type");
-        if (poke.type[0] !== undefined) {
-            firstType.textContent = `${poke.type[0]}`;
-        };
-
-        let rarity = document.createElement("h2");
-        rarity.setAttribute("class", "rarity");
-        rarity.textContent = `${poke.pokemon - rarity}`;
-
-        let generation = document.createElement("h2");
-        generation.setAttribute("class", "generation");
-        generation.textContent = `${poke.generation.num}`;
-
-        let height = document.createElement("h2");
-        height.setAttribute("class", "height");
-        height.textContent = `${poke.size.height}`;
-
-        let weight = document.createElement("h2");
-        weight.setAttribute("class", "weight");
-        weight.textContent = `${poke.size.weight}`;
-
-        cardsPokemon.appendChild(especificCardPokemon);
-        especificCardPokemon.appendChild(pokeImg);
-        especificCardPokemon.appendChild(namePokemon);
-        especificCardPokemon.appendChild(numberPokemon);
-        especificCardPokemon.appendChild(firstType);
-        especificCardPokemon.appendChild(secondType);
-
-        let showPokemons = document.getElementById("modalInformation");
-        showPokemons.appendChild(cardsPokemon);
-
-    });
-
-    modalInformation(pokemons)
-};*/
-
-/*const cleanCards = (poke) => {
-  for(let poke of pokemons){
-      let cardsPokemons = document.getElementById(`${poke.num}`);
-      if (cardsPokemons !== null){
-          cardsPokemons.remove()
-      }
-
-  }
-}*/
+});*/
+//-----------------------------------------------------------------------------

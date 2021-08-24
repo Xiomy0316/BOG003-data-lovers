@@ -13,7 +13,7 @@
 
 <body>
   <main>
-    <!--página de bienvenida-->
+    <!--Página de bienvenida-->
     <section class="welcome" id="welcome">
       <div class="container-presentation" id="presentation">
         <figure class="background">
@@ -25,6 +25,7 @@
         <figure class="Pikachu">
           <img>
         </figure>
+        <!--Barra de carga-->
         <div class="progress-bar" id="progress">
           <div class="preloader">
             <p>Loading...</p>
@@ -32,11 +33,12 @@
         </div>
       </div>
     </section>
-    <!--Pokémons principales-->
+    <!--Filtrar por-->
     <section class="container-select" id="images-pokemons">
       <div class="text">
         <label>Filter by:</label>
       </div>
+      <!--Filtro de tipo-->
       <select class="select-type" name="type" id="type-select">
         <option value="type" id="type" class="Type">Type</option>
         <option value="normal" id="normal" class="Normal">Normal</option>
@@ -57,6 +59,7 @@
         <option value="dragon" id="dragon" class="Dragon">Dragon</option>
         <option value="dark" id="dark" class="Dark">Dark</option>
       </select>
+      <!--Filtro de región-->
       <select class="select-region" name="region" id="region-select">
         <option value="region" id="region" class="Region">Region</option>
         <option value="kanto" id="kanto" class="Kanto">Kanto</option>
@@ -85,6 +88,8 @@
       <select class="select-resistant" name="resistant" id="resistant-select">
         <option value="resistant" id="resistant" class="Resistant">Resistant</option>
       </select>-->
+
+      <!--Ordenar por-->
       <select class="select-order" name="order" id="order-select">
         <option value="order" id="order" class="Order">Order by</option>
         <option value="A-Z" id="A-Z" class="right">A-Z</option>
@@ -93,6 +98,7 @@
         <option value="numberInf-numberSup" id="numberInf-numberSup" class="left2">Number inferior</option>
       </select>
     </section>
+    <!--Tarjetas generales pokemons-->
     <div class="row" id="pokemons-pp" hidden>
       <img src="" class="img-pokemons">
       <h2 class="pokemon-names"></h2>
@@ -100,14 +106,9 @@
       <small class="firstType type"></small>
       <small class="secondType type"></small>
     </div>
+    <!--Tarjetas específicas pokemons-->
     <section class="espesific-information" id="espesificInformation">
-      <div class="card-information" id="modalInformation" hidden>
-        <img src="" class="img-card">
-        <h2 class="card-names"></h2>
-        <h3 class="card-num"></h3>
-        <small class="firtsType type" display="none"></small>
-        <small class="secondType type" display="none"></small>
-        <p class="textDescription"></p>
+      <div class="modal card-information" id="modalInformation">
       </div>
     </section>
   </main>
