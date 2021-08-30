@@ -148,8 +148,8 @@ Listado de problemas que se detectarón a través de tests de usabilidad  y cóm
 **5** Se hizo la iteración de los prototipos de baja fidelidad, se incluyerón las mejoras y se llego a un prototipo final de baja fidelidad.
 
 <img src="Final_LowFidelity_Prototype/Pikachu_3.png">
-<img src="Final_LowFidelity_Prototype/Main_Pokemons.png">
-<img src="Final_LowFidelity_Prototype/Selection_Pokemon.png">
+<img src="Final_LowFidelity_Prototype/Main_Poke.png">
+<img src="Final_LowFidelity_Prototype/Selection_Poke.png">
 <img src="Final_LowFidelity_Prototype/Features_2.png">
 
 **6** Consiguiente a esto se diseñó el prototipo de alta fidelidad (Figma).
