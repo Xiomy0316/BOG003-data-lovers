@@ -2,7 +2,6 @@ body {
     background-image: url("Images/Pokeball.png");
     max-height: 100vh;
     background-position: center;
-    /*background-size: contain;*/
     background-color: #fff5f9;
     flex-wrap: wrap;
 }
@@ -12,7 +11,6 @@ body {
     background-image: url("Images/Logo.png");
     background-repeat: no-repeat;
     position: relative;
-    /*background-size: contain;*/
     height: 14em;
     width: 35em;
     display: flex;
@@ -23,7 +21,6 @@ body {
 .Pikachu {
     background-image: url("Images/Pikachu.png");
     background-repeat: no-repeat;
-    /*background-size: contain;*/
     height: 24.5em;
     width: 36em;
     position: relative;
@@ -71,7 +68,7 @@ body {
     left: 50%;
     transform: translateX(-50%);
 }
-/*transicion de pagina a pagina*/
+/*transicion de página a página*/
 .close {
     transform:translateY(-200%);
     transition: all 0s;
@@ -381,7 +378,7 @@ body {
     height: 17.688em;
 }  
 
-
+/*Color tarjeta general según tipo de pokemon*/
 .fire {
     background-color: #FDDFDF;
 }
@@ -501,7 +498,7 @@ h3 {
     align-items: center;
     align-content: space-around;
     position: relative;
-    /*box-sizing: border-box;*/
+    box-sizing: border-box;
 } 
 
 label {
@@ -545,20 +542,32 @@ label {
 }
 
 /*Responsive página pokemons*/
-@media (min-width: 280px) and (max-width: 415px) and (orientation: portrait) {
-    #pokemons-pp {
-        display: flex;
+@media (min-width: 280px) and (max-width: 660px) and (orientation: portrait) {
+    .container-select {
+        display: none;
+        margin-top: -160%;
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: center;
         align-items: center;
         align-content: space-around;
         position: relative;
-        margin: auto;
-        margin-top: -10%;
-        width: 100%;
         box-sizing: border-box;
-    }
+    } 
+}
+
+@media (min-width: 400px) and (max-width: 840px) and (orientation: portrait) {
+    .container-select {
+        display: none;
+        margin-top: -160%;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        align-content: space-around;
+        position: relative;
+        box-sizing: border-box;
+    } 
 }
 
 /*Tarjetas específicas modal*/
@@ -580,7 +589,7 @@ label {
 .modal {
     width: 40%;
     height: 50%;
-    /*background: #DEF3FD;*/
+    background: #DEF3FD;
     transition: transform 1s;
     transform: translateX(0%);
 }
@@ -589,19 +598,9 @@ label {
     transform: translateX(-300%);
 }
 
-/*Botón cerrar*/
-.imgClose {
-    cursor: pointer;
-    width: 4vh;
-    height: 4vh;
-    margin-left: 96%;
-    margin-top: -0.5%;
-}
-
-
  #modalInformation {
     margin: auto;
-    height: 80vh;
+    height: 85vh;
     border-radius: 1.25em;
     flex-direction: column;
     padding: 1.25em;
@@ -610,12 +609,44 @@ label {
     box-sizing: border-box;
 }
 
+/*Botón cerrar*/
+.imgClose {
+    cursor: pointer;
+    width: 2vw;
+    height: 4vh;
+    margin-left: 96%;
+    margin-top: -0.5%;
+}
+
+/*Información constante modal*/
 .upper{
     display: flex;
     text-align: center;
     align-items: center;
 }
 
+.namePoke {
+    font-size: 2.25rem;
+    margin-top: -6%;
+    margin-left: 2%;
+    color: rgb(121, 94, 94);
+}
+
+.numberPoke {
+    font-size: 2rem;
+    margin-top: -3%;
+    margin-left: 48%;
+    color: rgb(121, 94, 94);
+}
+
+.pokemonImg{
+    height: 14.5em;
+    position: absolute;
+    top: 10%;
+    margin-left: 25%;
+}
+
+/*Botones para cambios de cara modal*/
 .btnWindowA{
     cursor: pointer;
     background: #b6e6fc;
@@ -679,27 +710,7 @@ label {
     background-color: #84d5fa;
 }
 
-.namePoke {
-    font-size: 2.25rem;
-    margin-top: -6%;
-    margin-left: 2%;
-    color: rgb(121, 94, 94);
-}
-
-.numberPoke {
-    font-size: 2rem;
-    margin-top: -3%;
-    margin-left: 48%;
-    color: rgb(121, 94, 94);
-}
-
-.pokemonImg{
-    height: 14.5em;
-    position: absolute;
-    top: 10%;
-    margin-left: 25%;
-}
-
+/*Contenido por caras de tarjetas específicas modal*/
 .bodyA {
     position: fixed;
     top: 64%;
@@ -707,30 +718,54 @@ label {
     font-size: 1rem;
     font-style: normal;
     margin-right: 5%;
-    text-align-last: justify;
+    text-align: justify;
+    line-height: 1.35em;
 }
 
 .bodyB {
-    position: fixed;
-    top: 64%;
-    font-family: Roboto;
-    font-size: 1rem;
-    font-style: normal;
-}
-
-.bodyC {
-    position: fixed;
+    position: sticky;
     top: 64%;
     font-family: Roboto;
     font-size: 1rem;
     font-style: normal;
     line-height: 1.5em;
+    text-align: center;
 }
 
-.bodyD {
-    position: fixed;
+.evolutions {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    text-align: center;
+}
+
+.prevolutionImg,
+.evolutionImg {
+    width: 7em;
+    height: 7em;
+    background-color: rgb(210, 228, 210);
+    border: 0.3rem solid white;
+    border-radius: 4em;
+    margin-top: -4vh;
+}
+
+.bodyC {
+    position: sticky;
     top: 64%;
     font-family: Roboto;
     font-size: 1rem;
     font-style: normal;
+    line-height: 1.5em;
+    text-align: center;
+}
+
+.bodyD {
+    position: sticky;
+    top: 64%;
+    font-family: Roboto;
+    font-size: 1rem;
+    font-style: normal;
+    line-height: 1.5em;
+    text-align: center;
+    flex-direction: row;
 }
