@@ -1,5 +1,4 @@
-import { filterType, filterRegion, filterOrder, filterOrderNum, prom } from './data.js';
-import pokemon from './data/pokemon/pokemon.js';
+import { filterType, filterRegion, filterOrder, filterOrderNum } from './data.js';
 // import data from './data/lol/lol.js';
 import data from './data/pokemon/pokemon.js';
 // import data from './data/rickandmorty/rickandmorty.js';
@@ -121,7 +120,6 @@ const modalInformation = (poke) => {
 
 
     close.addEventListener("click", () => {
-        console.log("cerrar", close);
         modalC.style.visibility = "hidden";
         modal.classList.toggle("card-information");
         document.getElementById("modalInformation").innerHTML = "";
@@ -138,6 +136,7 @@ const modalInformation = (poke) => {
         }
     })
 
+    //Información constante modal
     const upper = document.createElement("div");
     upper.classList.add("upper");
     modal.appendChild(upper);
@@ -157,6 +156,7 @@ const modalInformation = (poke) => {
     pokeImg.setAttribute("src", `${poke.img}`);
     upper.appendChild(pokeImg);
 
+    //Botones para cambios de cara modal
     const btnWindowA = document.createElement("button");
     btnWindowA.classList.add("btnWindowA");
     btnWindowA.innerText = "Description";
@@ -177,11 +177,12 @@ const modalInformation = (poke) => {
     btnWindowD.innerText = "Attacks and Movements";
     upper.appendChild(btnWindowD);
 
+    //Contenido por caras de tarjetas específicas modal
     const bodyA = document.createElement("div");
     bodyA.classList.add("bodyA");
     bodyA.setAttribute("hidden", "");
     bodyA.setAttribute("id", "modalBody");
-    upper.appendChild(bodyA);
+    modal.appendChild(bodyA);
 
     let description = document.createElement("div");
     description.classList.add("description");
@@ -191,7 +192,7 @@ const modalInformation = (poke) => {
     let secondType = document.createElement("small");
     secondType.setAttribute("class", "secondType type");
     if (poke.type[1] !== undefined) {
-        secondType.textContent =`${poke.type[1]}`;
+        secondType.textContent = `${poke.type[1]}`;
         bodyA.appendChild(secondType);
     }
     let firstType = document.createElement("small");
@@ -199,7 +200,7 @@ const modalInformation = (poke) => {
     if (poke.type[0] !== undefined) {
         firstType.textContent = `${poke.type[0]}`;
         bodyA.appendChild(firstType);
-    };
+    }
 
     let rarity = document.createElement("div");
     rarity.classList.add("rarity");
@@ -225,36 +226,47 @@ const modalInformation = (poke) => {
     bodyB.classList.add("bodyB");
     bodyB.setAttribute("hidden", "");
     bodyB.setAttribute("id", "modalBody");
-    upper.appendChild(bodyB);
+    modal.appendChild(bodyB);
 
-    let egg = document.createElement("div");
-    egg.classList.add("egg");
-    egg.textContent = `${poke.egg}`;
-    bodyB.appendChild(egg);
+    const evolutions = document.createElement("div");
+    evolutions.classList.add("evolutions");
 
-    /*let distance = document.createElement("div");
-    distance.classList.add("distance");
-    bodyB.appendChild(distance);
-    if(poke["buddy-distance"] === undefined) {
-        distance.textContent = `${poke["buddy-distance"]}`;
-    }*/
+    const pokePrevolucion = document.createElement("div");
+    const prevolucionImg = document.createElement("img");
 
-    let evolutionCandy = document.createElement("div");
-    evolutionCandy.classList.add("evolutionCandy");
-    evolutionCandy.textContent = `${poke.evolution.candy}`;
-    bodyB.appendChild(evolutionCandy);
 
-    /*let prevEvolution = document.createElement("div");
-    prevEvolution.classList.add("prevEvolution");
-    if (poke.evolution !== undefined) {
-    prevEvolution.textContent = `${poke.evolution["prev-evolution"]}`;
-    bodyB.appendChild(prevEvolution);
+    pokePrevolucion.appendChild(prevolucionImg);
+
+    const pokeEvolucion = document.createElement("div");
+    const evolucionImg = document.createElement("img");
+
+
+    pokeEvolucion.appendChild(evolucionImg);
+
+    evolutions.appendChild(pokePrevolucion);
+    evolutions.appendChild(pokeEvolucion);
+
+    if ("prev-evolution" in poke.evolution) {
+        const txtPrevolucion = document.createElement("h3");
+        txtPrevolucion.textContent = "Pre-evolution";
+        pokePrevolucion.insertBefore(txtPrevolucion, prevolucionImg);
+        const Prevoluciones = poke.evolution["prev-evolution"][0]["num"];
+        prevolucionImg.src = "https://www.serebii.net/pokemongo/pokemon/" + Prevoluciones + ".png";
+        prevolucionImg.classList.add("prevolutionImg");
+
+
+    }
+    if ("next-evolution" in poke.evolution) {
+        const txtEvolucion = document.createElement("h3");
+        txtEvolucion.textContent = "Next-evolution";
+        pokeEvolucion.insertBefore(txtEvolucion, evolucionImg);
+        const Evoluciones = poke.evolution["next-evolution"][0]["num"];
+
+        evolucionImg.src = "https://www.serebii.net/pokemongo/pokemon/" + Evoluciones + ".png";
+        evolucionImg.classList.add("evolutionImg");
     }
 
-    let nextEvolution = document.createElement("div");
-    nextEvolution.classList.add("nextEvolution");
-    nextEvolution.textContent = `${poke.evolution["next-evolution"]}`;
-    bodyB.appendChild(nextEvolution);*/
+    bodyB.appendChild(evolutions);
 
     const bodyC = document.createElement("div");
     bodyC.classList.add("bodyC");
@@ -288,7 +300,7 @@ const modalInformation = (poke) => {
     estadisticPoke.appendChild(hpMax);
 
     const average = document.createElement("div");
-    average.textContent = "Average:" + Math.round((parseInt(poke.stats["base-attack"]) + parseInt(poke.stats["base-defense"]) + parseInt(poke.stats["base-stamina"]) ) / 3);
+    average.textContent = "Average:" + Math.round((parseInt(poke.stats["base-attack"]) + parseInt(poke.stats["base-defense"]) + parseInt(poke.stats["base-stamina"])) / 3);
     estadisticPoke.appendChild(average);
 
     const bodyD = document.createElement("div");
@@ -297,15 +309,38 @@ const modalInformation = (poke) => {
     bodyD.setAttribute("id", "modalD");
     modal.appendChild(bodyD);
 
-    let quickMove = document.createElement("div");
-    quickMove.classList.add("quickMove");
-    quickMove.textContent = "Name:" + poke["quick-move"][0]["name"] + "Base-damage:" + poke["quick-move"][0]["base-damage"];
-    ;
-    bodyD.appendChild(quickMove);
+    const title = document.createElement("div");
+    title.classList.add("title");
+    title.textContent = "Quick-move:";
+    bodyD.appendChild(title);
 
-//Botones ventanas modal
+    let quickMoveA = document.createElement("div");
+    quickMoveA.classList.add("quickMoveA");
+    quickMoveA.textContent = "Name:" + poke["quick-move"][0]["name"];
+    bodyD.appendChild(quickMoveA);
+
+    let quickMoveB = document.createElement("div");
+    quickMoveB.classList.add("quickMoveB");
+    quickMoveB.textContent = "Base-damage:" + poke["quick-move"][0]["base-damage"];
+    bodyD.appendChild(quickMoveB);
+
+    const titleAttack = document.createElement("div");
+    titleAttack.classList.add("titleAttack");
+    titleAttack.textContent = "Special-attack:";
+    bodyD.appendChild(titleAttack);
+
+    let specialAttackA = document.createElement("div");
+    specialAttackA.classList.add("specialAttackA");
+    specialAttackA.textContent = "Name:" + poke["special-attack"][0]["name"];
+    bodyD.appendChild(specialAttackA);
+
+    let specialAttackB = document.createElement("div");
+    specialAttackB.classList.add("specialAttackB");
+    specialAttackB.textContent = "Base-damage:" + poke["special-attack"][0]["base-damage"];
+    bodyD.appendChild(specialAttackB);
+
+    //Funcionalidad botones ventanas modal
     btnWindowA.addEventListener("click", () => {
-        console.log(document.querySelector(".bodyB"));
         document.querySelector(".bodyA").style.display = "block";
         document.querySelector(".bodyB").style.display = "none";
         document.querySelector(".bodyC").style.display = "none";
@@ -332,27 +367,8 @@ const modalInformation = (poke) => {
         document.querySelector(".bodyC").style.display = "none";
         document.querySelector(".bodyD").style.display = "block";
     })
-    
-    
-
-    /*export const prom = (pokemons) => {
-
-        let bases = pokemons.map(function (poke) {
-          poke.average = Math.round((parseInt(poke.stats["base-attack"]) + parseInt(poke.stats["base-defense"]) + parseInt(poke.stats["base-stamina"]) ) / 3);
-          return poke
-          
-        })
-        
-        return bases;*/
-      
-
-    /*document.getElementById("stadisticsPower").addEventListener("click", () => {
-        document.getElementById("pokemons-pp").innerHTML = "";
-        const attack = calculation(pokemons);
-        console.log(attack);
-        //visivilityCard(attack);
-    });*/
 }
+
 //Filtros
 document.getElementById("type-select").addEventListener("change", () => {
     const type_select = document.getElementById("type-select").value;
@@ -383,34 +399,3 @@ document.getElementById("order-select").addEventListener("change", () => {
     }
 
 });
-
-/*function sumStadistics()  {
-
-    const attack = document.getElementById("stadisticsPower");
-    attack.innerHTML = prom(pokemons, "base-attack");
-
-    const defense = document.getElementById("stadisticsDefense");
-    defense.innerHTML = prom(pokemons, "base-defense");;
-
-    const stamina = document.getElementById("stadisticsStamina");
-    stamina.innerHTML = prom(pokemons, "base-stamina");
-
-}*/
-
-/*document.getElementById("stadisticsButton").addEventListener("click", () => {
-    console.log("hola")
-    //const stadistics = document.getElementById("stadisticsPower");
-    document.getElementById("pokemons-pp").innerHTML = "";
-    sumStadistics()
-    //console.log(attack);
-    //visivilityCard(attack);
-});*/
-
-/*document.getElementById("stadisticsPower").addEventListener("click", () => {
-    document.getElementById("pokemons-pp").innerHTML = "";
-    const attack = prom(pokemons);
-    console.log(attack);
-    visivilityCard(attack);
-
-});*/
-//-----------------------------------------------------------------------------
