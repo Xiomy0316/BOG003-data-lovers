@@ -1,4 +1,4 @@
-/*import { filterType, filterRegion, filterOrder, filterOrderNum } from '../src/data.js';
+import { filterType, filterRegion, filterOrder, filterOrderNum } from '../src/data.js';
 
 let pokemonInitial =[{name: "pikachu", num:"025", generation: {name:"kanto"}, type:["electric"], size:{height: "0.41 m",
 weight: "6.0 kg"}, stats: {"base-attack": "112", "base-defense": "96", "base-stamina":"111", "max-cp": "938", "max-hp":"99"}},{name: "sneasel", num:"215", generation: {name:"johto"}, type:["dark", "ice"], size:{height: "0.89 m",
@@ -80,4 +80,4 @@ describe('filterOrderNum', () => {
     expect(filterOrderNum(pokemonInitial, "num superior")).toEqual(pokemonNum);
   });
 
-});*/
+});
