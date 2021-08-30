@@ -44,7 +44,7 @@ Para tener una visualización más rápida de los Pokémons.
 
 * El tipo lleva un color representativo.
 
-* Los Pokemons están organizados en 2 filas y 3 columnas.
+*  Los Pokemons están organizados en 63 filas y 4 columnas.
 
 * Los Pokemons están organizados en orden numérico de menor a mayor.
 
@@ -58,7 +58,7 @@ Para tener una visualización más rápida de los Pokémons.
 
 * El código está en el repositorio, más específicamente en la rama master.
 
-* El proyecto está desplegado en gitHub Pages.
+* El proyecto está desplegado en gitHub.
 
 * Se ha hecho pair-programming mínimo una hora al día.
 
@@ -81,6 +81,8 @@ Para reducir la cantidad de información y así poder elegir el Pokémon de mi a
 
 * Los Pokemons están organizados en filas y columnas según el filtrado (cantidad).
 
+* Debe ser responsive para desktop, tablet y mobile.
+
 **Definición de terminado:**
 
 * El código cumple con las funcionalidades y estilos acordados. 
@@ -89,7 +91,7 @@ Para reducir la cantidad de información y así poder elegir el Pokémon de mi a
 
 * El código está en el repositorio, más específicamente en la rama master.
 
-* El proyecto está desplegado en gitHub Pages.
+* El proyecto está desplegado en gitHub.
 
 * Se ha hecho pair-programming mínimo una hora al día.
 
@@ -118,7 +120,7 @@ Para tener mayor facilidad de lectura sobre las características claves de cada 
 
 * El código está en el repositorio, más específicamente en la rama master.
 
-* El proyecto está desplegado en gitHub Pages.
+* El proyecto está desplegado en gitHub.
 
 * Se ha hecho pair-programming mínimo una hora al día.
 
@@ -140,12 +142,14 @@ Para tener mayor facilidad de lectura sobre las características claves de cada 
 Listado de problemas que se detectarón a través de tests de usabilidad  y cómo se mejoró en propuesta final:
 * Se les mostrarón tres clases de prototipos (página de bienvenida) a los diferentes usuarios, de los cuales el 100% escogierón el Pikachu_3 (Pikachu volteado, dando la espalda).
 * Los usuarios testeados afirmaron que efectivamente, les parece más cómodo tener varios filtros en la página, pues se les sintetiza más el proceso a la hora de buscar la información. Además aconsejarón que los desplegables de filtrado, el botón buscar y el ordenar por, permanezcan constantes durante toda la búsqueda; así que estos se pusierón en todos los deseños. 
-* Se nos persuadió sobre darle más importancia a la jerarquía de terminos correspondientes a la página de aparición de los principales Pokemons (jerarquí dentro de las tarjetas); por lo que se le dió mayor tamaño al nombre, luego al número y por último al tipo.  
+* Se nos persuadió sobre darle más importancia a la jerarquía de terminos correspondientes a la página de aparición de los principales Pokemons (jerarquía dentro de las tarjetas); por lo que se le dió mayor tamaño al nombre, luego al número y por último al tipo.  
 * Al enseñarles a los usuarios testeados dos tipos de diseños para la información específica, estos afirmaron les parecio más práctico el que desglosa el contenido (características) por botones que el que lo hace de manera desplegable; por lo que se dejó el diseño elegido. 
 
 **5** Se hizo la iteración de los prototipos de baja fidelidad, se incluyerón las mejoras y se llego a un prototipo final de baja fidelidad.
 
 <img src="Final_LowFidelity_Prototype/Pikachu_3.png">
+<img src="Final_LowFidelity_Prototype/Main_Pokemons.png">
+<img src="Final_LowFidelity_Prototype/Selection_Pokemon.png">
 <img src="Final_LowFidelity_Prototype/Features_2.png">
 
 **6** Consiguiente a esto se diseñó el prototipo de alta fidelidad (Figma).
